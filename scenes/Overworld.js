@@ -62,7 +62,7 @@ class Overworld extends Phaser.Scene {
                     this.ROOMWIDTH * this.ROOMCORDS.x + (this.ROOMWIDTH * 0.5),
                     this.ROOMHEIGHT* this.ROOMCORDS.y + (this.ROOMHEIGHT * 0.5),
                     3000,
-                    'Quad.easeOut'
+                    'Sine.easeOut'
                 );
                 
                 this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH, this.ROOMHEIGHT);
@@ -77,7 +77,7 @@ class Overworld extends Phaser.Scene {
                     this.ROOMWIDTH * this.ROOMCORDS.x + (this.ROOMWIDTH * 0.5),
                     this.ROOMHEIGHT* this.ROOMCORDS.y + (this.ROOMHEIGHT * 0.5),
                     3000,
-                    'Expo.easeOut'
+                    'Sine.easeOut'
                 );
                 this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH, this.ROOMHEIGHT);
                 this.player.body.reset(this.player.body.x, this.player.body.y + 45);
@@ -107,7 +107,7 @@ class Overworld extends Phaser.Scene {
                     this.ROOMWIDTH * this.ROOMCORDS.x + (this.ROOMWIDTH * 0.5),
                     this.ROOMHEIGHT* this.ROOMCORDS.y + (this.ROOMHEIGHT * 0.5),
                     3000,
-                    'Circ.easeInOut'
+                    'Sine.easeOut'
                 );
                 this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH, this.ROOMHEIGHT);
                 this.player.body.reset(this.player.body.x - 35, this.player.body.y );
@@ -279,6 +279,4 @@ class Overworld extends Phaser.Scene {
             repeat: -1
         });
     }
-
-
 }

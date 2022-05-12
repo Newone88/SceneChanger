@@ -15,19 +15,19 @@ let cursors;
 // main game object
 let config = {
     type: Phaser.WEBGL,
-    width: 840,
-    height: 525,
+    width: 512,
+    height: 336,
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
+            debug: false,
             gravity: {
                 x: 0,
-                y: 1000
+                y: 0
             }
         }
     },
-    scene: [ Load, Movement ]
+    scene: [ Load, Overworld ]
 };
 
 let game = new Phaser.Game(config);
