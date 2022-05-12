@@ -49,7 +49,7 @@ class Overworld extends Phaser.Scene {
 
         // set world boundaries
         this.physics.world.setBounds(this.ROOMWIDTH-this.player.displayWidth/2, this.ROOMHEIGHT-this.player.displayHeight/2, 
-            this.ROOMWIDTH+this.player.displayWidth, this.ROOMHEIGHT+this.player.displayHeight/2);
+            this.ROOMWIDTH+this.player.displayWidth , this.ROOMHEIGHT+this.player.displayHeight/2);
 
         this.physics.world.on('worldbounds', (body, blockedUp, blockedDown, blockedLeft, blockedRight) => {
             if (blockedUp) {
@@ -62,10 +62,10 @@ class Overworld extends Phaser.Scene {
                     this.ROOMWIDTH * this.ROOMCORDS.x + (this.ROOMWIDTH * 0.5),
                     this.ROOMHEIGHT* this.ROOMCORDS.y + (this.ROOMHEIGHT * 0.5),
                     3000,
-                    'Sine.easeOut'
+                    'Circ.easeOut'
                 );
                 
-                this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH, this.ROOMHEIGHT);
+                this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH + 10, this.ROOMHEIGHT + 10);
                 this.player.body.reset(this.player.body.x, this.player.body.y - 45);
             }
             if (blockedDown) {
@@ -77,7 +77,7 @@ class Overworld extends Phaser.Scene {
                     this.ROOMWIDTH * this.ROOMCORDS.x + (this.ROOMWIDTH * 0.5),
                     this.ROOMHEIGHT* this.ROOMCORDS.y + (this.ROOMHEIGHT * 0.5),
                     3000,
-                    'Sine.easeOut'
+                    'Bounce.easeOut'
                 );
                 this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH, this.ROOMHEIGHT);
                 this.player.body.reset(this.player.body.x, this.player.body.y + 45);
@@ -107,7 +107,7 @@ class Overworld extends Phaser.Scene {
                     this.ROOMWIDTH * this.ROOMCORDS.x + (this.ROOMWIDTH * 0.5),
                     this.ROOMHEIGHT* this.ROOMCORDS.y + (this.ROOMHEIGHT * 0.5),
                     3000,
-                    'Sine.easeOut'
+                    'Quad.easeOut'
                 );
                 this.physics.world.setBounds(this.ROOMWIDTH*this.ROOMCORDS.x, this.ROOMHEIGHT*this.ROOMCORDS.y, this.ROOMWIDTH, this.ROOMHEIGHT);
                 this.player.body.reset(this.player.body.x - 35, this.player.body.y );
