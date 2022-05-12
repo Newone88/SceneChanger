@@ -11,18 +11,17 @@ class Load extends Phaser.Scene {
         // and use in any other scene
 
         // Load atlas here
-        this.load.atlas('link_atlas','linksheet.png','linkmap.json');
-
-        this.load.image('talltrees', 'talltrees.png');
-        this.load.image('ground', 'ground.png');
-        this.load.image('cloud', 'white-cloud.png');
-
-        
-
+        this.load.atlas('link_atlas', 'linksheet.png', 'linkmap.json');
+        this.load.image('LoZ-overworld', 'LoZ-overworld-1.gif');
+        this.load.image('LoZ-overworld-left', 'LoZ-overworld-left.gif');
+        this.load.image('LoZ-overworld-right', 'LoZ-overworld-right.gif');
+        this.load.image('LoZ-overworld-up', 'LoZ-overworld-up.gif');
+        this.load.image('LoZ-overworld-upleft', 'LoZ-overworld-upleft.gif');
+        this.load.image('LoZ-overworld-upright', 'LoZ-overworld-upright.gif');
     }
 
     create() {
         // ...and pass to the next Scene
-        this.scene.start('movementScene');
+        this.scene.start('overworldScene');
     }
 }
